@@ -16,8 +16,7 @@ def obtener_nombre_pieza(simbolo):
 
     Retorna el nombre de la pieza del ajedrez dado su simbolo
 
-    :param simbolo: la representacion de la pieza
-     segun el enunciado
+    :param simbolo: la representacion de la pieza segun el enunciado
     :return: El nombre y color de la pieza
     """
     tipo = 'Negro'
@@ -38,4 +37,3 @@ def obtener_nombre_pieza(simbolo):
         return 'Rey ' + tipo
     else:
         return 'No es una pieza'
-
