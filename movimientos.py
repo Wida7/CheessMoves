@@ -38,6 +38,40 @@ def obtener_nombre_pieza(simbolo):
     else:
         return 'No es una pieza'
 
+def mover_rey(tablero,x_inicial,x_final,y_inicial, y_final):
+    """
+
+    Funcion que define el movimiento del rey
+
+    :param tablero:
+    :param x_inicial:
+    :param x_final:
+    :param y_inicial:
+    :param y_final:
+    :return:
+    """
+
+    pass
+
+    esRey = True
+
+
+    if (x_inicial == x_final or y_inicial == y_final):
+        esRey = tablero[x_inicial][y_inicial] in 'Rr'
+
+        if esRey:
+            for x in range(x_inicial + 1, x_final):
+                if (tablero[x][y_final] == ''):
+                    for y in range (y_inicial, y_final):
+                        print([x_inicial],[y])
+                else:
+                    raise ValueError("El camino esta bloqueado")
+                    break
+        else:
+            print('No es un rey')
+    else:
+        print("El movimiento no es válido")
+
 
 # def mover_torre(tablero, x_inicial, x_final, y_inicial, y_final):
 #     """
@@ -130,3 +164,4 @@ def mover_torre(tablero, x_inicial, y_inicial, x_final, y_final):
     else:
         raise Exception('La pieza en x = {0} y={1} no es una torre'.format(x_inicial,y_inicial))
     return tablero
+
