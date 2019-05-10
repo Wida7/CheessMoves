@@ -153,6 +153,7 @@ class Test_movimientos(TestCase):
                 ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
                 ['T', 'K', 'A', 'R', 'Q', 'A', 'K', 'T']
             ]
-            obtengo = test_mover_rey(dado[0], dado[0], dado[0], dado[0], dado[5])
+            obtengo = test_mover_rey(dado[0], dado[0], dado[0], dado[1], dado[5])
             self.assertEquals(espero, obtengo)
-            self.assertRaises(ValueError)
+            print("espero\n",
+                  tablero_a_cadena(espero))
