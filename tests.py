@@ -20,4 +20,3 @@ class Test_movimientos(TestCase):
         espero = []
         obtengo = mover_torre(dado[0], dado[1], dado[2], dado[3], dado[4])
         self.assertEquals(espero, obtengo)
-
