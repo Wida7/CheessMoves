@@ -84,6 +84,17 @@ def mover_rey(tablero,x_inicial,x_final,y_inicial, y_final):
     if esRey == 't':
         if tablero[x_final][y_final] == 't':
             raise ValueError('No puedo matar aliados')
+
+        if esRey:
+            for x in range(x_inicial + 1, x_final):
+                if (tablero[x][y_final] == ''):
+                    for y in range (y_inicial, y_final):
+                        print([x_inicial],[y])
+                else:
+                    raise ValueError("El camino esta bloqueado")
+
+                    break
+
         else:
             esRey == tablero[x_final][y_final]
 
