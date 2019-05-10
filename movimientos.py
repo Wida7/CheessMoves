@@ -67,6 +67,7 @@ def mover_rey(tablero,x_inicial,x_final,y_inicial, y_final):
                 else:
                     raise ValueError("El camino esta bloqueado")
 
+                    break
         else:
             print('No es un rey')
     else:
