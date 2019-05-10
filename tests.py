@@ -104,3 +104,55 @@ class Test_movimientos(TestCase):
         obtengo = mover_torre(dado[0], dado[0], dado[0], dado[0], dado[0])
         self.assertEquals(espero, obtengo)
         self.assertEqual(ValueError)
+
+        def test_mover_rey(self):
+            dado = [
+                [['t', 'k', 'a', 'q', 'r', 'a', 'k', 't'],
+                 ['p ', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+                 ['T', 'K', 'A', 'R', 'Q', 'A', 'K', 'T']],
+                0, 4, 0, 5
+            ]
+            espero = [
+                ['t', 'k', 'a', 'q', 'r', 'a', 'k', 't'],
+                ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                ['', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+                ['T', 'K', 'A', 'R', 'Q', 'A', 'K', 'T']
+            ]
+            obtengo = test_mover_rey(dado[0], dado[0], dado[0], dado[0], dado[5])
+            self.assertEquals(espero, obtengo)
+            self.assertRaises(ValueError)
+
+        def test_mover_rey(self):
+            dado = [
+                [['t', 'k', 'a', 'q', '', 'a', 'k', 't'],
+                 ['p ', 'p', 'p', 'p', 'r', 'p', 'p', 'p'],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                 ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+                 ['T', 'K', 'A', 'R', 'Q', 'A', 'K', 'T']],
+                0, 5, 1, 5
+            ]
+            espero = [
+                ['t', 'k', 'a', 'q', 'r', 'a', 'k', 't'],
+                ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                ['', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+                ['T', 'K', 'A', 'R', 'Q', 'A', 'K', 'T']
+            ]
+            obtengo = test_mover_rey(dado[0], dado[0], dado[0], dado[0], dado[5])
+            self.assertEquals(espero, obtengo)
+            self.assertRaises(ValueError)
