@@ -155,5 +155,4 @@ class Test_movimientos(TestCase):
             ]
             obtengo = test_mover_rey(dado[0], dado[0], dado[0], dado[1], dado[5])
             self.assertEquals(espero, obtengo)
-            print("espero\n",
-                  tablero_a_cadena(espero))
+            print("espero\n", tablero_a_cadena(espero))
