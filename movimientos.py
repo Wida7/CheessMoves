@@ -53,24 +53,52 @@ def mover_rey(tablero,x_inicial,x_final,y_inicial, y_final):
 
     pass
 
-    esRey = True
+    esRey = None
+    auxiliar_x = x_final
 
-
+    #Validar si es rey
     if (x_inicial == x_final or y_inicial == y_final):
         esRey = tablero[x_inicial][y_inicial] in 'Rr'
 
-        if esRey:
-            for x in range(x_inicial + 1, x_final):
-                if (tablero[x][y_final] == ''):
-                    for y in range (y_inicial, y_final):
-                        print([x_inicial],[y])
-                else:
-                    raise ValueError("El camino esta bloqueado")
-                    break
+        #Validar si el movimiento en x es mayor a una casilla
+        if auxiliar_x != x_final + 1:
+
+            #Valida si la posicion en y es vacia
+            if esRey:
+                for x in range(x_inicial + 1, x_final):
+                    if (tablero[x][y_final] != ''):
+                        for y in range (y_inicial, y_final):
+                            print([x_inicial],[y])
+                    else:
+                        raise ValueError("El camino esta bloqueado")
+            else:
+                print('No es un rey')
         else:
-            print('No es un rey')
+            raise ValueError("El movimiento no es válido")
+
     else:
-        print("El movimiento no es válido")
+        raise ValueError('No es un rey')
+
+
+    #Validamos si en el movimiento final hay un aliado o enemigo
+    if esRey == 't':
+        if tablero[x_final][y_final] == 't':
+            raise ValueError('No puedo matar aliados')
+        else:
+            esRey == tablero[x_final][y_final]
+
+    else:
+        if tablero[x_final][y_final] == 'T':
+            raise ValueError('No puedo matar aliados')
+        else:
+            esRey == tablero[x_final][y_final]
+
+
+
+
+
+
+
 
 
 # def mover_torre(tablero, x_inicial, x_final, y_inicial, y_final):
